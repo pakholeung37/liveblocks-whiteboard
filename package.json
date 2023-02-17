@@ -4,8 +4,10 @@
   "description": "",
   "scripts": {
     "husky:install": "husky install",
-    "lint": "turbo run lint",
-    "lint:fix": "turbo run lint:fix",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "lint": "eslint . --quiet",
+    "lint:fix": "eslint . --fix",
     "build": "turbo run build ",
     "test": "turbo run test",
     "prepublishOnly": "turbo run prepublishOnly",

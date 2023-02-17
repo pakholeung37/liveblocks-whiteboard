@@ -14,9 +14,7 @@
     "airbnb-typescript/base",
     "plugin:prettier/recommended"
   ],
-  "plugins": [
-    "@typescript-eslint/eslint-plugin"
-  ],
+  "plugins": ["@typescript-eslint/eslint-plugin"],
   "env": {
     "es6": true,
     "browser": true,
@@ -27,7 +25,10 @@
     "@typescript-eslint/no-use-before-define": "off",
     "no-param-reassign": "off",
     "no-console": "off",
-    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_" }
+    ],
     "import/prefer-default-export": "off",
     "import/extensions": "off",
     "no-underscore-dangle": "off",

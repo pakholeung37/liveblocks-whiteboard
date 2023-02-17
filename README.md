@@ -7,18 +7,21 @@ This POC should prove solidjs has enough performances, satisfaction, DX to build
 ## Features
 
 ### functions
+
 - [x] command palette
   - [x] navigation
-  - [ ] actions - dark mode toggle action 
+  - [ ] actions - dark mode toggle action
 - [x] chart
 - [x] table
 
 ### components
+
 - [x] button
 - [x] avatar
 - [x] charts
 
 ### pages
+
 - [x] dashboard
 - [ ] chat
 - [ ] todo
@@ -26,9 +29,11 @@ This POC should prove solidjs has enough performances, satisfaction, DX to build
 - [ ] app - table like
 
 ### styles
+
 - [x] dark mode
 
 ## Best pratices
+
 - [x] typescript first
 - [x] pnpm workspace
 - [x] turborepo for monorepo
