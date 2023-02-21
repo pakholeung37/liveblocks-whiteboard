@@ -1,7 +1,7 @@
 {
   "name": "app",
   "scripts": {
-    "dev": "solid-start dev",
+    "dev": "solid-start dev --port 3001",
     "build": "solid-start build",
     "start": "solid-start start"
   },
@@ -10,8 +10,20 @@
     "solid-start-node": "^0.2.19"
   },
   "dependencies": {
+    "@auth/core": "0.4.0",
+    "@auth/solid-start": "0.1.0",
+    "@liveblocks/client": "^0.19.10",
+    "@liveblocks/node": "^0.19.10",
+    "@kobalte/core": "0.6.1",
     "@solidjs/meta": "^0.28.2",
     "@solidjs/router": "*",
+    "@tanstack/solid-query": "4.24.9",
+    "base-64": "^1.0.0",
+    "clsx": "^1.2.1",
+    "date-fns": "^2.29.3",
+    "nanoid": "^4.0.0",
+    "next-auth": "^4.16.4",
+    "swr": "^1.3.0",
     "solid-js": "*",
     "solid-start": "^0.2.21",
     "undici": "^5.15.1"

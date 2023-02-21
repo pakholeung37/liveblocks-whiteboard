@@ -10,3 +10,4 @@ nginx.conf.template
 antd.variable.css
 packages/css/vars.scss
 *.yaml
+.solid
