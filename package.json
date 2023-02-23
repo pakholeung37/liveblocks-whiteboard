@@ -57,7 +57,6 @@
     "@vanilla-extract/css-utils": "^0.1.2",
     "@vanilla-extract/sprinkles": "^1.4.1",
     "lodash-es": "4.17.21",
-    "solid-app-router": "0.4.2",
     "solid-js": "1.6.11",
     "tailwindcss": "3.2.7"
   },

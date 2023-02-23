@@ -6,11 +6,12 @@ import { SignInIcon } from '~/icons'
 import { ComponentProps, JSX, splitProps } from 'solid-js'
 import clsx from 'clsx'
 import { authRouteData } from '~/routes/_shared'
-import {useRouteData} from "solid-start";
+import { useRouteData } from 'solid-start'
 
 export const routeData = authRouteData
 export default function Index() {
-  useRouteData<typeof routeData>()
+  const data = useRouteData<typeof routeData>()
+  data()
   return (
     <MarketingLayout>
       <Container class={styles.section}>

@@ -58,8 +58,8 @@ export function Select(oriProps: Props) {
     >
       <KSelect.Trigger class={clsx(props.class, styles.trigger)}>
         <KSelect.Value
-          placeholder={props.placeholder}
           class={styles.triggerValue}
+          placeholder={props.placeholder}
         />
         <KSelect.Icon class={styles.triggerIcon}>
           <SelectIcon />

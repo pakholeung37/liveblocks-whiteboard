@@ -10,11 +10,13 @@ import {
 } from 'solid-js'
 import styles from './button.module.css'
 import { A } from 'solid-start'
+import { Dynamic } from 'solid-js/web'
 
 interface Props {
   variant?: 'primary' | 'secondary' | 'subtle' | 'destructive'
   icon?: JSXElement
   ref?: Ref<'button'>
+  as?: string
 }
 
 const defaultProps: Required<Pick<Props, 'variant'>> = {
@@ -22,6 +24,7 @@ const defaultProps: Required<Pick<Props, 'variant'>> = {
 }
 export const Button = (oriProps: ComponentProps<'button'> & Props) => {
   const [props, rootProps] = splitProps(mergeProps(defaultProps, oriProps), [
+    'as',
     'class',
     'icon',
     'children',
@@ -30,7 +33,8 @@ export const Button = (oriProps: ComponentProps<'button'> & Props) => {
   const icon = memo(() => props.icon)
   const children = memo(() => props.children)
   return (
-    <button
+    <Dynamic
+      component={props.as || 'button'}
       {...rootProps}
       class={clsx(
         props.class,
@@ -50,7 +54,7 @@ export const Button = (oriProps: ComponentProps<'button'> & Props) => {
       <Show when={children()}>
         <span class={styles.label}>{children}</span>
       </Show>
-    </button>
+    </Dynamic>
   )
 }
 

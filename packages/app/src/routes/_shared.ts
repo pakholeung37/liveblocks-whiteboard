@@ -1,6 +1,6 @@
 import { createServerData$, redirect } from 'solid-start/server'
 import { authOpts } from '~/routes/api/auth/[...solidauth]'
-import { getSession } from '@auth/solid-start'
+import { getSession } from '~/utils/get-session'
 
 export const authRouteData = () => {
   return createServerData$(
@@ -8,9 +8,10 @@ export const authRouteData = () => {
       // eslint-disable-next-line
       const session = await getSession(request, authOpts)
       if (session) {
-        // @ts-ignore
+        // eslint-disable-next-line @typescript-eslint/no-throw-literal
         throw redirect('/dashboard')
       }
+      return session
     },
     { key: () => ['auth_user'] },
   )
