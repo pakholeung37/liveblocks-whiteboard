@@ -6,6 +6,7 @@ import {
   Ref,
   Show,
   splitProps,
+  children as memo,
 } from 'solid-js'
 import styles from './button.module.css'
 import { A } from 'solid-start'
@@ -26,13 +27,15 @@ export const Button = (oriProps: ComponentProps<'button'> & Props) => {
     'children',
     'variant',
   ])
+  const icon = memo(() => props.icon)
+  const children = memo(() => props.children)
   return (
     <button
       {...rootProps}
       class={clsx(
         props.class,
         styles.button,
-        props.icon && !props.children && styles.iconButton,
+        icon() && !children() && styles.iconButton,
         {
           [styles.buttonPrimary]: props.variant === 'primary',
           [styles.buttonSecondary]: props.variant === 'secondary',
@@ -41,11 +44,11 @@ export const Button = (oriProps: ComponentProps<'button'> & Props) => {
         },
       )}
     >
-      <Show when={props.icon}>
-        <span class={styles.icon}>{props.icon}</span>
+      <Show when={icon()}>
+        <span class={styles.icon}>{icon}</span>
       </Show>
-      <Show when={props.children} keyed>
-        <span class={styles.label}>{props.children}</span>
+      <Show when={children()}>
+        <span class={styles.label}>{children}</span>
       </Show>
     </button>
   )
@@ -58,13 +61,15 @@ export function LinkButton(oriProps: ComponentProps<typeof A> & Props) {
     'children',
     'variant',
   ])
+  const icon = memo(() => props.icon)
+  const children = memo(() => props.children)
   return (
     <A
       {...rootProps}
       class={clsx(
         props.class,
         styles.button,
-        props.icon && !props.children && styles.iconButton,
+        icon() && !children() && styles.iconButton,
         {
           [styles.buttonPrimary]: props.variant === 'primary',
           [styles.buttonSecondary]: props.variant === 'secondary',
@@ -73,11 +78,11 @@ export function LinkButton(oriProps: ComponentProps<typeof A> & Props) {
         },
       )}
     >
-      <Show when={props.icon}>
-        <span class={styles.icon}>{props.icon}</span>
+      <Show when={icon()}>
+        <span class={styles.icon}>{icon}</span>
       </Show>
-      <Show when={props.children}>
-        <span class={styles.label}>{props.children}</span>
+      <Show when={children()}>
+        <span class={styles.label}>{children}</span>
       </Show>
     </A>
   )
